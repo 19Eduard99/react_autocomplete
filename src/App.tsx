@@ -27,7 +27,13 @@ export const App: React.FC = () => {
     const newQuery = event.target.value;
 
     setQuery(newQuery);
-    applyQuery(newQuery);
+
+    const trimmedQuery = newQuery.trim();
+
+    if (trimmedQuery !== appliedQuery) {
+      applyQuery(trimmedQuery);
+    }
+
     setSelectedPerson(null);
   };
 
